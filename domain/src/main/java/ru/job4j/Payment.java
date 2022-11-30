@@ -16,4 +16,5 @@ public class Payment {
     private String method;
     private boolean successful;
     private Timestamp paymentTime;
+    private Order order;
 }
