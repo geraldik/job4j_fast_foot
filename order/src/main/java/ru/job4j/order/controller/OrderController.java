@@ -1,11 +1,11 @@
-package ru.job4j.controller;
+package ru.job4j.order.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.job4j.Order;
-import ru.job4j.service.OrderService;
+import ru.job4j.domain.Order;
+import ru.job4j.order.service.OrderService;
 
 import java.util.List;
 

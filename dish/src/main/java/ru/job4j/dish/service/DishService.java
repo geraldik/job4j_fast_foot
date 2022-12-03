@@ -1,7 +1,7 @@
-package ru.job4j.service;
+package ru.job4j.dish.service;
 
 
-import ru.job4j.Dish;
+import ru.job4j.domain.Dish;
 
 import java.util.List;
 
@@ -14,7 +14,6 @@ public interface DishService {
     Dish findById(int id);
 
     List<Dish> findAll();
-
     boolean deleteDish(Dish dish);
 }
 

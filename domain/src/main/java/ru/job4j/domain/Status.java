@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.domain;
 
 public enum Status {
     AWAITING_PAYMENT,

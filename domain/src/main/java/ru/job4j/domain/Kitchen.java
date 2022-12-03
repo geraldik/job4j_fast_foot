@@ -1,6 +1,9 @@
-package ru.job4j;
+package ru.job4j.domain;
 
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -8,11 +11,9 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Dish {
+public class Kitchen {
     @EqualsAndHashCode.Include
     private int id;
     private String name;
-    private String category;
-    private String description;
-    private double price;
+    private List<Order> orders = new ArrayList<>();
 }

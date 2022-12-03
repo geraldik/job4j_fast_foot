@@ -1,9 +1,6 @@
-package ru.job4j;
+package ru.job4j.domain;
 
 import lombok.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,9 +8,8 @@ import java.util.List;
 @Setter
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Delivery {
+public class Notification {
     @EqualsAndHashCode.Include
     private int id;
-    private String name;
-    private List<Courier> couriers = new ArrayList<>();
+    private String message;
 }

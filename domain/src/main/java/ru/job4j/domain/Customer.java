@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.domain;
 
 import lombok.*;
 
@@ -8,9 +8,10 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Card {
+public class Customer {
     @EqualsAndHashCode.Include
     private int id;
-    private String cardNumber;
-    private boolean actual;
+    private String name;
+    private String phoneNumber;
+    private String email;
 }

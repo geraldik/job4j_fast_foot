@@ -1,11 +1,11 @@
-package ru.job4j.service;
+package ru.job4j.order.service;
 
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.job4j.Order;
-import ru.job4j.Status;
-import ru.job4j.repository.OrderRepository;
+import ru.job4j.domain.Order;
+import ru.job4j.domain.Status;
+import ru.job4j.order.repository.OrderRepository;
 
 import java.util.List;
 import java.util.NoSuchElementException;
