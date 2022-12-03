@@ -2,8 +2,11 @@ package ru.job4j;
 
 import lombok.*;
 
+import javax.persistence.Enumerated;
 import java.util.ArrayList;
 import java.util.List;
+
+import static javax.persistence.EnumType.STRING;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,4 +21,6 @@ public class Order {
     private String description;
     private double price;
     private List<Dish> dishes = new ArrayList<>();
+    @Enumerated(STRING)
+    private Status status;
 }
