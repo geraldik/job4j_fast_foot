@@ -1,48 +1,20 @@
 package ru.job4j.order.service;
 
-
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 import ru.job4j.domain.Order;
 import ru.job4j.domain.Status;
-import ru.job4j.order.repository.OrderRepository;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
-@Service
-@AllArgsConstructor
+public interface OrderService {
+    Order createOrder(Order order);
 
-public class OrderService {
+    Status checkStatus(int orderId);
 
-    private final OrderRepository repository;
+    void deleteOrder(int orderId);
 
-    public Order createOrder(Order order) {
-        return repository.save(order);
-    }
+    List<Order> findAllOrders();
 
-    public Status checkStatus(int orderId) {
-        var optionalOrder = this.findById(orderId);
-        return optionalOrder.getStatus();
-    }
+    Order findById(int orderId);
 
-    public void deleteOrder(int orderId) {
-        repository.deleteById(orderId);
-    }
-
-    public List<Order> findAllOrders() {
-        return repository.findAll();
-    }
-
-    public Order findById(int orderId) {
-        var optionalOrder = repository.findById(orderId);
-        if (optionalOrder.isEmpty()) {
-            throw new NoSuchElementException("There is no order by this id");
-        }
-        return optionalOrder.get();
-    }
-
-    public Order update(Order order) {
-       return repository.save(order);
-    }
+    Order update(Order order);
 }
