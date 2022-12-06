@@ -2,7 +2,10 @@ package ru.job4j.domain;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,15 +14,10 @@ import javax.persistence.*;
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Dish {
+public class Category {
     @EqualsAndHashCode.Include
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "category_id")
-    private Category category;
-    private String description;
-    private double price;
 }

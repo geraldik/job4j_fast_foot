@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.domain.Order;
-import ru.job4j.order.service.OrderService;
+import ru.job4j.order.service.SimpleOrderService;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
 
-    private final OrderService service;
+    private final SimpleOrderService service;
 
     @PostMapping()
     public ResponseEntity<Order> crateOrder(@RequestBody Order order) {
@@ -51,7 +51,7 @@ public class OrderController {
         );
     }
 
-    @PutMapping("/id")
+    @PutMapping("/{id}")
     public ResponseEntity<Order> updateOrder(@PathVariable int id, Order order) {
         order.setId(id);
         var updateOrder = service.update(order);
